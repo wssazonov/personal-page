@@ -1,0 +1,17 @@
+<header class="site-header" aria-label="Основная навигация">
+    <a class="brand" href="#hero" aria-label="Вячеслав, на главную">
+        <span class="brand__logo">S</span>
+        <span class="brand__name">Вячеслав</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Разделы портфолио">
+        @for (item of navItems; track item.href) {
+            <a [href]="item.href">{{ item.label }}</a>
+        }
+    </nav>
+
+    <a class="resume-button" href="assets/resume.pdf" download>
+        <span aria-hidden="true">↓</span>
+        Скачать резюме
+    </a>
+</header>

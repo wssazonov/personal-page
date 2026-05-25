@@ -1,0 +1,140 @@
+<section id="projects" class="section-card" aria-labelledby="projects-title">
+    <div class="section-heading">
+        <span class="section-icon" aria-hidden="true">✧</span>
+        <h2 id="projects-title">Ключевые кейсы</h2>
+    </div>
+    <p class="section-lead">
+        Не абстрактные карточки, а рабочие сценарии из enterprise-проектов:
+        что делал, где была сложность и какой результат это давало продукту.
+    </p>
+
+    <div class="projects-grid">
+        @for (project of projects; track project.title) {
+            <article class="project-card">
+                <div class="project-card__top">
+                    <div class="project-card__media">
+                        <button
+                            class="project-preview"
+                            [class]="
+                                'project-preview project-preview--' +
+                                project.preview +
+                                (project.images.length ? ' project-preview--image' : '')
+                            "
+                            type="button"
+                            [disabled]="!project.images.length"
+                            [attr.aria-label]="project.images.length ? 'Открыть скриншот: ' + project.title : null"
+                            (click)="openPreview(project, project.images[0])"
+                        >
+                            @if (project.images[0]; as image) {
+                                <img [src]="image.src" [alt]="image.alt" />
+                                <span class="project-preview__zoom" aria-hidden="true">↗</span>
+                            } @else {
+                                @if (project.preview === "bpmn") {
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                }
+                                @if (project.preview === "forms") {
+                                    <i></i><i></i><i></i>
+                                }
+                                @if (project.preview === "code") {
+                                    <code>const form = signal&lt;State&gt;();</code>
+                                    <code>stream$.pipe(map(toView));</code>
+                                    <code>editor.dispatch(change);</code>
+                                }
+                                @if (project.preview === "dashboard") {
+                                    <b></b><b></b><b></b><b></b>
+                                }
+                            }
+                        </button>
+                        @if (project.images.length > 1) {
+                            <div class="project-card__gallery" aria-label="Скриншоты кейса">
+                                @for (image of project.images; track image.src; let index = $index) {
+                                    <button
+                                        type="button"
+                                        [attr.aria-label]="'Открыть скриншот ' + (index + 1) + ': ' + project.title"
+                                        (click)="openPreview(project, image)"
+                                    >
+                                        {{ index + 1 }}
+                                    </button>
+                                }
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        <p class="project-card__role">{{ project.role }}</p>
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                </div>
+
+                <div class="project-card__body">
+                    <div class="project-card__block">
+                        <span>Что делал</span>
+                        <ul>
+                            @for (detail of project.details; track detail) {
+                                <li>{{ detail }}</li>
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="project-card__block project-card__block--result">
+                        <span>Результат</span>
+                        <p>{{ project.result }}</p>
+                    </div>
+                </div>
+
+                <ul class="project-card__stack" aria-label="Стек проекта">
+                    @for (tech of project.stack; track tech) {
+                        <li>{{ tech }}</li>
+                    }
+                </ul>
+            </article>
+        }
+    </div>
+
+    @if (openedProject; as project) {
+        <div
+            class="preview-lightbox"
+            role="dialog"
+            aria-modal="true"
+            [attr.aria-label]="'Скриншот кейса: ' + project.title"
+        >
+            <button
+                class="preview-lightbox__backdrop"
+                type="button"
+                aria-label="Закрыть скриншот"
+                (click)="closePreview()"
+            ></button>
+            <figure class="preview-lightbox__content">
+                <button
+                    class="preview-lightbox__close"
+                    type="button"
+                    aria-label="Закрыть скриншот"
+                    (click)="closePreview()"
+                >
+                    ×
+                </button>
+                @if (openedImage; as image) {
+                    <img [src]="image.src" [alt]="image.alt" />
+                }
+                <figcaption>
+                    <span>{{ project.title }}</span>
+                    {{ openedImage?.caption }}
+                </figcaption>
+                @if (project.images.length > 1) {
+                    <div class="preview-lightbox__gallery" aria-label="Выбор скриншота">
+                        @for (image of project.images; track image.src; let index = $index) {
+                            <button
+                                type="button"
+                                [class.preview-lightbox__thumb--active]="image.src === openedImage?.src"
+                                [attr.aria-label]="'Показать скриншот ' + (index + 1)"
+                                (click)="selectPreviewImage(image)"
+                            >
+                                <img [src]="image.src" [alt]="image.alt" />
+                            </button>
+                        }
+                    </div>
+                }
+            </figure>
+        </div>
+    }
+</section>

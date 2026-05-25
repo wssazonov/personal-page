@@ -1,0 +1,54 @@
+<section id="hero" class="hero section-card" aria-labelledby="hero-title">
+    <div class="hero__content">
+        <p class="eyebrow">Frontend Developer</p>
+        <h1 id="hero-title">Senior Frontend Developer</h1>
+        <p class="hero__subtitle">Angular • TypeScript • RxJS</p>
+        <p class="hero__description">
+            Разрабатываю сложные, масштабируемые и удобные интерфейсы для
+            enterprise-решений с фокусом на качество, производительность и
+            поддерживаемость.
+        </p>
+
+        <div class="hero__actions" aria-label="Быстрые контакты">
+            <a
+                class="primary-action"
+                href="https://t.me/VyacheslavSazonov"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <span aria-hidden="true">↗</span>
+                Написать в Telegram
+            </a>
+            <a class="secondary-action" href="mailto:mrdrap@mail.ru">
+                <span aria-hidden="true">✉</span>
+                Написать на Email
+            </a>
+        </div>
+
+        <ul class="hero__facts" aria-label="Краткая информация">
+            <li>
+                <span class="fact-icon" aria-hidden="true">⌖</span>
+                Россия, удаленно
+            </li>
+            <li>
+                <span class="fact-icon" aria-hidden="true">◷</span>
+                9+ лет опыта
+            </li>
+        </ul>
+    </div>
+
+    <div class="hero__visual" aria-label="Визуальный блок технологий">
+        <div class="portrait-frame">
+            <img src="assets/images/portret.png" alt="Портрет разработчика" />
+        </div>
+
+        <ul class="tech-stack" aria-label="Технологии">
+            @for (tech of techStack; track tech.name) {
+                <li class="tech-card" [class]="'tech-card tech-card--' + tech.tone">
+                    <span class="tech-card__icon">{{ tech.shortName }}</span>
+                    <span>{{ tech.name }}</span>
+                </li>
+            }
+        </ul>
+    </div>
+</section>

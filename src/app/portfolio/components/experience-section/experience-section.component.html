@@ -1,0 +1,51 @@
+<section id="experience" class="section-card" aria-labelledby="experience-title">
+    <div class="section-heading">
+        <span class="section-icon" aria-hidden="true">▣</span>
+        <h2 id="experience-title">Опыт работы</h2>
+    </div>
+
+    <ol class="timeline">
+        @for (item of experience; track item.period) {
+            <li class="timeline__item">
+                <time>{{ item.period }}</time>
+                <div class="timeline__marker" aria-hidden="true"></div>
+                <article class="timeline__content">
+                    <div>
+                        <h3>{{ item.role }}</h3>
+                        <p class="timeline__company">{{ item.company }}</p>
+                        @if (item.project) {
+                            <p class="timeline__project">
+                                Проект:
+                                @if (item.project.url) {
+                                    <a
+                                        [href]="item.project.url"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        class="timeline__project-link"
+                                    >
+                                        {{ item.project.name }}
+                                    </a>
+                                } @else {
+                                    <span>{{ item.project.name }}</span>
+                                }
+                            </p>
+                        }
+                        @if (item.projects?.length) {
+                            <ul class="timeline__projects" aria-label="Проекты BIV">
+                                @for (project of item.projects; track project) {
+                                    <li>{{ project }}</li>
+                                }
+                            </ul>
+                        }
+                        <p>{{ item.description }}</p>
+                    </div>
+                    <ul class="timeline__stack" aria-label="Стек">
+                        @for (tech of item.stack; track tech) {
+                            <li>{{ tech }}</li>
+                        }
+                    </ul>
+                </article>
+            </li>
+        }
+    </ol>
+</section>

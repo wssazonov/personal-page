@@ -1,0 +1,58 @@
+<section class="section-card" aria-labelledby="why-title">
+    <div class="section-heading">
+        <span class="section-icon" aria-hidden="true">ϟ</span>
+        <h2 id="why-title">Почему со мной комфортно работать</h2>
+    </div>
+
+    <div class="why-grid">
+        @for (card of cards; track card.title) {
+            <article class="why-card">
+                <span class="why-card__icon" aria-hidden="true">
+                    @switch (card.icon) {
+                        @case ("logic") {
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 7h5l2 3h9" />
+                                <path d="M4 17h5l2-3h9" />
+                                <path d="M17 7l3 3-3 3" />
+                                <path d="M17 11l3 3-3 3" />
+                            </svg>
+                        }
+                        @case ("shield") {
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3l7 3v5c0 4.4-2.8 8.4-7 10-4.2-1.6-7-5.6-7-10V6l7-3z" />
+                                <path d="M8.5 12.5l2.2 2.2 4.8-5.1" />
+                            </svg>
+                        }
+                        @case ("target") {
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 21a9 9 0 1 0-9-9" />
+                                <path d="M12 17a5 5 0 1 0-5-5" />
+                                <path d="M12 13a1 1 0 1 0-1-1" />
+                                <path d="M13 11l6-6" />
+                                <path d="M18 5h3v3" />
+                            </svg>
+                        }
+                        @case ("team") {
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+                                <path d="M17 10a3 3 0 1 0 0-6" />
+                                <path d="M3 21v-2a6 6 0 0 1 12 0v2" />
+                                <path d="M16 17c2.4.4 4 1.8 4 4" />
+                            </svg>
+                        }
+                        @default {
+                            <svg viewBox="0 0 24 24">
+                                <path d="M5 5h14v10H8l-3 3V5z" />
+                                <path d="M9 9h6" />
+                                <path d="M9 12h4" />
+                                <path d="M16.5 17.5l1.5 1.5 3-3" />
+                            </svg>
+                        }
+                    }
+                </span>
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.description }}</p>
+            </article>
+        }
+    </div>
+</section>

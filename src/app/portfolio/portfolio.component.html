@@ -1,0 +1,18 @@
+<main class="portfolio-shell">
+    <app-portfolio-header [navItems]="navItems" />
+
+    <app-hero-section [techStack]="heroTechStack" />
+
+    <div class="section-grid section-grid--two">
+        <app-about-section />
+        <app-skills-section [skills]="skills" />
+    </div>
+
+    <app-projects-section [projects]="projects" />
+
+    <app-experience-section [experience]="experience" />
+
+    <app-why-me-section [cards]="whyMe" />
+
+    <app-contacts-section [contacts]="contacts" />
+</main>

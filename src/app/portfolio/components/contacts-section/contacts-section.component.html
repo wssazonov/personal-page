@@ -1,0 +1,46 @@
+<section id="contacts" class="section-card contacts" aria-labelledby="contacts-title">
+    <div class="contacts__content">
+        <div class="section-heading">
+            <span class="section-icon" aria-hidden="true">✉</span>
+            <h2 id="contacts-title">Контакты</h2>
+        </div>
+        <p class="contacts__lead">Буду рад новым возможностям и интересным проектам.</p>
+
+        <address class="contacts-list">
+            @for (contact of contacts; track contact.label) {
+                @if (contact.href) {
+                    <a
+                        class="contact-item contact-item--link"
+                        [href]="contact.href"
+                        [attr.target]="contact.href.startsWith('http') ? '_blank' : null"
+                        rel="noreferrer"
+                    >
+                        <span class="contact-item__icon" aria-hidden="true">
+                            {{ contact.icon }}
+                        </span>
+                        <span class="contact-item__body">
+                            <span class="contact-item__label">{{ contact.label }}</span>
+                            <span class="contact-item__value">{{ contact.value }}</span>
+                        </span>
+                        <span class="contact-item__arrow" aria-hidden="true">↗</span>
+                    </a>
+                } @else {
+                    <div class="contact-item">
+                        <span class="contact-item__icon" aria-hidden="true">
+                            {{ contact.icon }}
+                        </span>
+                        <span class="contact-item__body">
+                            <span class="contact-item__label">{{ contact.label }}</span>
+                            <span class="contact-item__value">{{ contact.value }}</span>
+                        </span>
+                    </div>
+                }
+            }
+        </address>
+    </div>
+
+    <blockquote class="quote-card">
+        <span aria-hidden="true">“</span>
+        <p>Пишу код, который решает задачи бизнеса и делает пользователей счастливее.</p>
+    </blockquote>
+</section>
