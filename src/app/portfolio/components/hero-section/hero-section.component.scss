@@ -249,3 +249,56 @@
 .tech-card--rose .tech-card__icon {
     background: linear-gradient(135deg, #ff4b77, #e22247);
 }
+
+@media (max-width: 1080px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__visual {
+        grid-template-columns: minmax(0, 1fr) 190px;
+    }
+}
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: auto;
+        padding: 26px 18px;
+    }
+
+    .hero__actions {
+        display: grid;
+    }
+
+    .primary-action,
+    .secondary-action {
+        width: 100%;
+    }
+
+    .hero__visual {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .portrait-frame {
+        min-height: 340px;
+    }
+
+    .tech-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tech-card {
+        min-height: 54px;
+    }
+}
+
+@media (max-width: 460px) {
+    .hero__facts {
+        gap: 14px;
+    }
+
+    .tech-stack {
+        grid-template-columns: 1fr;
+    }
+}

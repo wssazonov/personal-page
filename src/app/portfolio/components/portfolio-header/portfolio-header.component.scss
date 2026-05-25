@@ -113,3 +113,51 @@
     border-color: rgba(139, 92, 246, 0.58);
     transform: translateY(-2px);
 }
+
+@media (max-width: 1080px) {
+    .site-header {
+        grid-template-columns: 1fr auto;
+    }
+
+    .site-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 2px 0 4px;
+    }
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        position: relative;
+        top: auto;
+        gap: 14px;
+        padding: 12px;
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .resume-button {
+        min-height: 42px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .site-nav {
+        gap: 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 460px) {
+    .site-header {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-button {
+        width: 100%;
+    }
+}

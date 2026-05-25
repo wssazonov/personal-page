@@ -91,50 +91,51 @@
         }
     </div>
 
-    @if (openedProject; as project) {
-        <div
-            class="preview-lightbox"
-            role="dialog"
-            aria-modal="true"
-            [attr.aria-label]="'Скриншот кейса: ' + project.title"
-        >
+</section>
+
+@if (openedProject; as project) {
+    <div
+        class="preview-lightbox"
+        role="dialog"
+        aria-modal="true"
+        [attr.aria-label]="'Скриншот кейса: ' + project.title"
+    >
+        <button
+            class="preview-lightbox__backdrop"
+            type="button"
+            aria-label="Закрыть скриншот"
+            (click)="closePreview()"
+        ></button>
+        <figure class="preview-lightbox__content">
             <button
-                class="preview-lightbox__backdrop"
+                class="preview-lightbox__close"
                 type="button"
                 aria-label="Закрыть скриншот"
                 (click)="closePreview()"
-            ></button>
-            <figure class="preview-lightbox__content">
-                <button
-                    class="preview-lightbox__close"
-                    type="button"
-                    aria-label="Закрыть скриншот"
-                    (click)="closePreview()"
-                >
-                    ×
-                </button>
-                @if (openedImage; as image) {
-                    <img [src]="image.src" [alt]="image.alt" />
-                }
-                <figcaption>
-                    <span>{{ project.title }}</span>
-                    {{ openedImage?.caption }}
-                </figcaption>
-                @if (project.images.length > 1) {
-                    <div class="preview-lightbox__gallery" aria-label="Выбор скриншота">
-                        @for (image of project.images; track image.src; let index = $index) {
-                            <button
-                                type="button"
-                                [class.preview-lightbox__thumb--active]="image.src === openedImage?.src"
-                                [attr.aria-label]="'Показать скриншот ' + (index + 1)"
-                                (click)="selectPreviewImage(image)"
-                            >
-                                <img [src]="image.src" [alt]="image.alt" />
-                            </button>
-                        }
-                    </div>
-                }
-            </figure>
-        </div>
-    }
-</section>
+            >
+                ×
+            </button>
+            @if (openedImage; as image) {
+                <img [src]="image.src" [alt]="image.alt" />
+            }
+            <figcaption>
+                <span>{{ project.title }}</span>
+                {{ openedImage?.caption }}
+            </figcaption>
+            @if (project.images.length > 1) {
+                <div class="preview-lightbox__gallery" aria-label="Выбор скриншота">
+                    @for (image of project.images; track image.src; let index = $index) {
+                        <button
+                            type="button"
+                            [class.preview-lightbox__thumb--active]="image.src === openedImage?.src"
+                            [attr.aria-label]="'Показать скриншот ' + (index + 1)"
+                            (click)="selectPreviewImage(image)"
+                        >
+                            <img [src]="image.src" [alt]="image.alt" />
+                        </button>
+                    }
+                </div>
+            }
+        </figure>
+    </div>
+}

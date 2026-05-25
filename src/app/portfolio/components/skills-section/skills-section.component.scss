@@ -16,8 +16,15 @@
     font-weight: 650;
     padding: 11px 16px;
     cursor: default;
-    transition:
-        color 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
+}
+
+@media (max-width: 460px) {
+    .chip-list {
+        gap: 9px;
+    }
+
+    .chip-list li {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
 }
