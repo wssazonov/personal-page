@@ -261,6 +261,18 @@ export const CONTACTS: ContactItem[] = [
         href: "https://t.me/VyacheslavSazonov",
     },
     {
+        label: "WhatsApp",
+        icon: "WA",
+        value: "+7 999 270-21-82",
+        href: "https://wa.me/79992702182",
+    },
+    {
+        label: "Phone",
+        icon: "+7",
+        value: "+7 999 270-21-82",
+        href: "tel:+79992702182",
+    },
+    {
         label: "Email",
         icon: "@",
         value: "mrdrap@mail.ru",
@@ -278,5 +290,4 @@ export const CONTACTS: ContactItem[] = [
         value: "Vyacheslav Sazonov",
         href: "https://www.linkedin.com/in/vyacheslav-sazonov-509b3911a/",
     },
-    { label: "Location", icon: "RU", value: "Россия, удаленно" },
 ];

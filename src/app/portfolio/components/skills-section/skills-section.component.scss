@@ -19,23 +19,11 @@
     transition:
         color 180ms ease,
         border-color 180ms ease,
-        background 180ms ease,
-        transform 180ms ease,
-        box-shadow 180ms ease;
+        background 180ms ease;
 }
 
 .chip-list li:hover {
-    border-color: rgba(139, 92, 246, 0.55);
-    background:
-        linear-gradient(
-            135deg,
-            rgba(139, 92, 246, 0.2),
-            rgba(47, 125, 246, 0.12)
-        ),
-        rgba(255, 255, 255, 0.06);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow:
-        0 16px 34px rgba(76, 61, 255, 0.22),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e8edf8;
 }
