@@ -74,6 +74,8 @@
 }
 
 .hero__actions {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 24px;
@@ -114,6 +116,8 @@
 }
 
 .hero__facts {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 24px;
     color: #ffffff;
@@ -179,6 +183,8 @@
 }
 
 .tech-card {
+    display: flex;
+    align-items: center;
     gap: 12px;
     min-height: 58px;
     padding: 0 16px;

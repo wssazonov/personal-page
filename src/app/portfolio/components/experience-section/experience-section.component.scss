@@ -114,9 +114,18 @@
     justify-content: flex-end;
     gap: 8px;
     min-width: 255px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .timeline__stack li {
     height: 30px;
     padding: 7px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.045);
+    color: #dce4f6;
+    font-size: 13px;
+    font-weight: 650;
 }

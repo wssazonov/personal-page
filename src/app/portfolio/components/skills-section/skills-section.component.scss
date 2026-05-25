@@ -2,19 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.chip-list li,
-.timeline__stack li {
+.chip-list li {
     border: 1px solid var(--border);
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.045);
     color: #dce4f6;
     font-size: 13px;
     font-weight: 650;
-}
-
-.chip-list li {
     padding: 11px 16px;
     cursor: default;
     transition:
