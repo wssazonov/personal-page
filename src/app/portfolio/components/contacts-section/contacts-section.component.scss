@@ -1,0 +1,137 @@
+.contacts {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+.contacts::after {
+    right: 22px;
+    bottom: 12px;
+    width: 150px;
+    height: 150px;
+    opacity: 0.36;
+    background-image: radial-gradient(
+        circle,
+        rgba(167, 129, 255, 0.9) 1px,
+        transparent 1px
+    );
+    background-size: 12px 12px;
+    mask-image: radial-gradient(circle, #000 28%, transparent 72%);
+}
+
+.contacts__lead {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.contacts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    font-style: normal;
+}
+
+.contact-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 74px;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.035);
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.contact-item--link:hover {
+    border-color: rgba(139, 92, 246, 0.48);
+    background: rgba(139, 92, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-item__icon {
+    display: grid;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    border-radius: 13px;
+    background: rgba(139, 92, 246, 0.08);
+    color: #bc93ff;
+    font-size: 12px;
+    font-weight: 950;
+    letter-spacing: 0;
+}
+
+.contact-item__body {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.contact-item__label {
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 850;
+}
+
+.contact-item__value {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact-item__arrow {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    place-items: center;
+    color: rgba(188, 147, 255, 0.88);
+    font-size: 14px;
+}
+
+.quote-card {
+    display: grid;
+    min-height: 150px;
+    align-content: center;
+    padding: 28px;
+    border-radius: 16px;
+    background:
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(139, 92, 246, 0.2),
+            transparent 12rem
+        ),
+        rgba(255, 255, 255, 0.045);
+}
+
+.quote-card span {
+    height: 36px;
+    color: rgba(139, 92, 246, 0.9);
+    font-size: 78px;
+    font-weight: 900;
+    line-height: 0.7;
+}
+
+.quote-card p {
+    max-width: 330px;
+    margin: 16px 0 0;
+    color: #d5dbea;
+    font-size: 16px;
+    line-height: 1.55;
+}

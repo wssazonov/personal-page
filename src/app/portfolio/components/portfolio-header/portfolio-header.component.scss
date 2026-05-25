@@ -1,0 +1,115 @@
+.site-header {
+    position: sticky;
+    z-index: 20;
+    top: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 24px;
+    align-items: center;
+    min-height: 58px;
+    padding: 10px 14px;
+    border-radius: 18px;
+}
+
+.brand,
+.site-nav,
+.resume-button,
+.hero__actions,
+.hero__facts,
+.section-heading,
+.tech-card,
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    gap: 12px;
+    min-width: 145px;
+    font-weight: 800;
+}
+
+.brand__logo {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid rgba(139, 92, 246, 0.52);
+    border-radius: 12px;
+    color: #b58cff;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 0 18px rgba(139, 92, 246, 0.8);
+}
+
+.brand__name {
+    color: var(--text);
+    font-size: 18px;
+}
+
+.site-nav {
+    justify-content: flex-end;
+    gap: clamp(12px, 2.4vw, 30px);
+    color: #eef2ff;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.site-nav a,
+.resume-button,
+.primary-action,
+.secondary-action,
+.contact-item a {
+    transition:
+        color 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.site-nav a:hover,
+.contact-item a:hover {
+    color: #bd9cff;
+}
+
+.resume-button,
+.primary-action,
+.secondary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border-radius: 12px;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.resume-button span,
+.primary-action span,
+.secondary-action span {
+    display: grid;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+    flex: 0 0 auto;
+    line-height: 1;
+}
+
+.resume-button {
+    gap: 10px;
+    padding: 0 18px;
+    border: 1px solid var(--border-strong);
+    color: #ffffff;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.resume-button:hover,
+.secondary-action:hover {
+    border-color: rgba(139, 92, 246, 0.58);
+    transform: translateY(-2px);
+}

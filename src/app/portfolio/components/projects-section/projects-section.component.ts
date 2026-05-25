@@ -8,10 +8,11 @@ import {
 import type { ProjectCard, ProjectImage } from "../../portfolio.models";
 
 @Component({
-    selector: "app-projects-section",
-    standalone: true,
-    templateUrl: "./projects-section.component.html",
-    changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: "app-projects-section",
+  standalone: true,
+  templateUrl: "./projects-section.component.html",
+  styleUrl: "./projects-section.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsSectionComponent {
     @Input({ required: true }) projects: ProjectCard[] = [];
